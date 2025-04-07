@@ -41,8 +41,25 @@ This project is a **Dynamic Workflow Approval System** built with **React Vite**
 - Stored workflows data in `localStorage` to persist data across sessions.
 
 ### 5. **Components**
+- **ActionForm**
+- **ConditionChecker**
+- **Navbar**
+- **Workflow builder**
 - **DashboardPage**: Displays a list of workflows and provides drag-and-drop functionality.
 - **ProgressBar**: A component that shows the progress of workflows based on step status.
+
+### 6. **Mocks**
+- **workflows.json**
+
+### 7. **Routes**
+- **Routes.jsx**
+
+### 8. **App.jx**
+
+### 9. **Main.jsx , config.js**
+
+### 6. **Mocks**
+- **workflows.json**
 
 ---
 
