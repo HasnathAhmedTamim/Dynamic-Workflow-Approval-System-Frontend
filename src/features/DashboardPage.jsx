@@ -53,10 +53,12 @@ const DashboardPage = () => {
     localStorage.setItem("workflows", JSON.stringify(updatedWorkflows));
   };
 
+  // Handle reordering the workflows when dragging
   const onDragEnd = (result) => {
     const { source, destination } = result;
 
-    if (!destination) return; // Dropped outside the list
+    // If dropped outside the droppable area, do nothing
+    if (!destination) return;
 
     const items = Array.from(workflows);
     const [removed] = items.splice(source.index, 1);
@@ -90,14 +92,14 @@ const DashboardPage = () => {
           <Droppable droppableId="droppable" direction="vertical">
             {(provided) => (
               <div
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
                 ref={provided.innerRef}
                 {...provided.droppableProps}
               >
                 {workflows.map((workflow, index) => (
                   <Draggable
                     key={workflow.id}
-                    draggableId={workflow.id}
+                    draggableId={workflow.id.toString()} // Ensure the ID is a string
                     index={index}
                   >
                     {(provided) => (
@@ -127,7 +129,8 @@ const DashboardPage = () => {
                                 className="flex justify-between items-center text-sm"
                               >
                                 <span className="text-purple-950 font-bold">
-                                  <p className="font-bold "> Role :</p> {step.name} ({step.role})
+                                  <p className="font-bold"> Role :</p>{" "}
+                                  {step.name} ({step.role})
                                 </span>
                                 <select
                                   value={step.status}

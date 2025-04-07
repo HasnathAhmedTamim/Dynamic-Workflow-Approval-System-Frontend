@@ -1,12 +1,60 @@
-# React + Vite
+# Workflow Management Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This project is a **Workflow Management Dashboard** built with **React**. It allows users to view and manage workflows, drag-and-drop workflow items, and update the status of workflow steps. Key features include workflow creation, deletion, reordering, and step status management.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Drag-and-Drop Reordering**: Users can reorder workflows and steps using drag-and-drop functionality.
+- **Workflow Status Management**: Each workflow step has a status (approved, pending, rejected) that can be updated.
+- **Persistent Data**: Workflows are stored in `localStorage` for persistence across sessions.
+- **Reusable Components**: Includes a progress bar to visually display the completion status of workflows.
+
+---
+
+## Technologies Used
+
+- **React**: For building user interfaces.
+- **React Router DOM**: For routing between different views.
+- **react-beautiful-dnd**: For enabling drag-and-drop functionality.
+- **TailwindCSS**: A utility-first CSS framework for styling the application.
+- **localStorage**: For persisting workflow data locally.
+
+---
+
+## Project Setup & Process
+
+### 1. **React Setup**
+- Initialized a React project using `Vite` or `create-react-app`.
+- Used **React** for UI components and **react-router-dom** for routing.
+
+### 2. **Drag-and-Drop Not work**
+- Integrated **react-beautiful-dnd** for drag-and-drop reordering of workflows and workflow steps.
+
+### 3. **State Management**
+- Used **React hooks** (`useState`, `useEffect`) to manage and update workflow data.
+
+### 4. **Data Persistence**
+- Stored workflows data in `localStorage` to persist data across sessions.
+
+### 5. **Components**
+- **DashboardPage**: Displays a list of workflows and provides drag-and-drop functionality.
+- **ProgressBar**: A component that shows the progress of workflows based on step status.
+
+---
+
+## Installation
+
+### Prerequisites
+
+- **Node.js**: Make sure you have Node.js installed on your machine.
+
+### Steps to Set Up
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/HasnathAhmedTamim/CollectionProject.git
