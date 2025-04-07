@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import DashboardPage from "./features/DashboardPage";
+import WorkflowDetailPage from "./features/WorkflowDetailPage";
+import WorkflowBuilder from "./components/WorkflowBuilder";
+import Navbar from "./components/NavBar";
 
-function App() {
-  const [count, setCount] = useState(0)
+
+const App = () => {
+  // useEffect(() => {
+  //   // Initialize workflows if not already stored in localStorage
+  //   const storedWorkflows = localStorage.getItem("workflows");
+  //   if (!storedWorkflows) {
+  //     const initialWorkflows = [
+  //       {
+  //         id: "1",
+  //         name: "Expenses Approval Workflow",
+  //         steps: [
+  //           {
+  //             id: "step1",
+  //             name: "Step 1: Finance Approval",
+  //             role: "finance",
+  //             condition: "amount > 500",
+  //             status: "pending",
+  //             feedback: "",
+  //           },
+  //           {
+  //             id: "step2",
+  //             name: "Step 2: Manager Approval",
+  //             role: "manager",
+  //             condition: "category = urgent",
+  //             status: "pending",
+  //             feedback: "",
+  //           },
+  //         ],
+  //       },
+  //     ];
+  //     localStorage.setItem("workflows", JSON.stringify(initialWorkflows));
+  //   }
+  // }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Router>
+      <Navbar /> {/* Add Navbar here */}
+      <Routes>
+        <Route path="/" element={<DashboardPage />} />
+        <Route path="/workflow-detail/:id" element={<WorkflowDetailPage />} />
+        <Route path="/workflow-builder" element={<WorkflowBuilder />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;

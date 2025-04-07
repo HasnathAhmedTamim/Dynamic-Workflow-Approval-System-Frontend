@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Expense Approval",
+    "steps": [
+      {
+        "id": 1,
+        "role": "manager",
+        "condition": "amount > 500",
+        "status": "pending"
+      },
+      {
+        "id": 2,
+        "role": "finance",
+        "condition": "category = urgent",
+        "status": "pending"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Leave Approval",
+    "steps": [
+      {
+        "id": 1,
+        "role": "hr",
+        "condition": "leave_type = sick",
+        "status": "pending"
+      }
+    ]
+  }
+]

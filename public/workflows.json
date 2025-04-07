@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1", 
+    "name": "Expense Approval Workflow",
+    "steps": [
+      {
+        "id": "step1",
+        "name": "Step 1: Finance Approval",
+        "role": "finance",
+        "condition": "amount > 500",
+        "status": "pending",
+        "feedback": "good"
+      }
+    ]
+  }
+]
