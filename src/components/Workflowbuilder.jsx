@@ -10,7 +10,7 @@ const WorkflowBuilder = () => {
 
   const handleSaveWorkflow = () => {
     const newWorkflow = {
-      id: Date.now(),
+      id: Date.now().toString(),
       name: workflowName,
       steps: steps,
     };
@@ -56,16 +56,15 @@ const WorkflowBuilder = () => {
       </div>
 
       <div>
-        {/* <h3 className="text-2xl font-semibold mb-4">Work Flow Field</h3> */}
         {steps.map((step, index) => (
           <div
             key={index}
-            className="mb-6 p-4 border border-gray-200 rounded-lg"
+            className="mb-6 p-4 border border-gray-200 rounded-lg "
           >
-            <div className="mb-4 ">
+            <div className="mb-4">
               <label
                 htmlFor={`role-${index}`}
-                className="block text-sm font-medium  mb-2"
+                className="block text-sm font-medium mb-2"
               >
                 Role
               </label>
@@ -84,7 +83,7 @@ const WorkflowBuilder = () => {
             <div className="mb-4">
               <label
                 htmlFor={`condition-${index}`}
-                className="block text-sm font-medium  mb-2"
+                className="block text-sm font-medium mb-2"
               >
                 Condition
               </label>
@@ -101,15 +100,28 @@ const WorkflowBuilder = () => {
             </div>
 
             <div className="mb-4">
-              <span className="text-sm font-medium ">
-                Status:{" "}
-                <span className="font-semibold text-blue-600">
-                  {step.status}
-                </span>
-              </span>
+              <label
+                htmlFor={`status-${index}`}
+                className="block text-sm font-medium mb-2"
+              >
+                Status
+              </label>
+              <select
+                id={`status-${index}`}
+                value={step.status}
+                onChange={(e) =>
+                  handleChangeStep(index, "status", e.target.value)
+                }
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="pending">Pending</option>
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+              </select>
             </div>
           </div>
         ))}
+
         <button
           onClick={handleAddStep}
           className="bg-green-500 text-white py-2 px-6 rounded-md hover:bg-green-600 transition duration-300"

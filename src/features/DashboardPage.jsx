@@ -126,8 +126,8 @@ const DashboardPage = () => {
                                 key={index}
                                 className="flex justify-between items-center text-sm"
                               >
-                                <span className="text-gray-700 font-medium">
-                                  {step.name} ({step.role})
+                                <span className="text-purple-950 font-bold">
+                                  <p className="font-bold "> Role :</p> {step.name} ({step.role})
                                 </span>
                                 <select
                                   value={step.status}

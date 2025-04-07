@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="bg-blue-500 p-4">
+    <nav className="bg-slate-800 p-4">
       <div className="flex justify-between items-center">
         <div className="text-white text-2xl font-bold">
           <Link to="/">Workflow App</Link>

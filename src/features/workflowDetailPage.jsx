@@ -47,11 +47,15 @@ const WorkflowDetailPage = () => {
 
   return (
     <div className="p-6 max-w-5xl mx-auto">
+      <p className="text-white mb-4">Workflow Tittle </p>
+
       <h2 className="text-3xl font-bold text-blue-600 mb-6">{workflow.name}</h2>
+      <p className="text-white mb-4">Workflow Progress Bar</p>
 
       <div className="mb-8">
         <ProgressBar steps={workflow.steps} />
       </div>
+      <p className="text-white mb-4">Details of WorkFlows </p>
 
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2">
         {workflow.steps.map((step) => (
@@ -91,7 +95,7 @@ const WorkflowDetailPage = () => {
           onClick={() => navigate("/")}
           className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition"
         >
-           Back to Dashboard
+          Back to Dashboard
         </button>
       </div>
     </div>
