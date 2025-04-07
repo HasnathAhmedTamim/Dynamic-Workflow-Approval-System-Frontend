@@ -57,4 +57,4 @@ This project is a **Workflow Management Dashboard** built with **React**. It all
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/HasnathAhmedTamim/CollectionProject.git
+   git clone https://github.com/HasnathAhmedTamim/Dynamic-Workflow-Approval-System-Frontend.git
