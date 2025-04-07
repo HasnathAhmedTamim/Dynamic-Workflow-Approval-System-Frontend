@@ -1,8 +1,8 @@
-# Workflow Management Dashboard
+# Dynamic Workflow Approval System frontend
 
 ## Description
 
-This project is a **Workflow Management Dashboard** built with **React**. It allows users to view and manage workflows, drag-and-drop workflow items, and update the status of workflow steps. Key features include workflow creation, deletion, reordering, and step status management.
+This project is a **Dynamic Workflow Approval System** built with **React Vite**. It allows users to view and manage workflows, drag-and-drop workflow items, and update the status of workflow steps. Key features include workflow creation, deletion, reordering, and step status management.
 
 ---
 
@@ -58,3 +58,9 @@ This project is a **Workflow Management Dashboard** built with **React**. It all
 
    ```bash
    git clone https://github.com/HasnathAhmedTamim/Dynamic-Workflow-Approval-System-Frontend.git
+
+ **Navigate to the project directory**: 
+    Install dependencies:
+   ` npm install`
+    Start the development server: `npm start`
+**Open the app in your browser at local host**
